@@ -1,0 +1,420 @@
+/* Style untuk seluruh halaman */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1c1c1c;
+    color: #f0f0f0;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    max-width: 1500px; /* Menambahkan batas maksimum untuk lebar kontainer */
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: flex-start; /* Atur semua elemen di sebelah kiri */
+}
+
+header h1 a {
+    text-decoration: none;
+    color: #DAF7A6; /* Hijau Muda */
+    font-size: 36px;
+}
+
+/* Banner */
+.banner {
+    background-color: #333;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.banner h2 {
+    color: #DAF7A6; /* Hijau Muda */
+    font-size: 48px;
+}
+
+/* About Section */
+.about {
+    padding: 50px 50px;
+    background-color: #2b2b2b;
+}
+
+.about h3 {
+    text-align: center;
+    font-size: 30px;
+    color: #B0B0B0; /* Metallic Silver */
+    margin-bottom: 40px;
+}
+
+.about .box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Memungkinkan kolom untuk melipat saat lebar kontainer menyempit */
+}
+
+.about .col2 {
+    width: 50%;
+    min-width: 300px; /* Menambahkan batas minimum lebar kolom */
+}
+
+.about img {
+    width: 70%; /* Mengatur lebar gambar agar memenuhi lebar kontainer */
+    height: auto; /* Memastikan tinggi gambar disesuaikan secara otomatis untuk mempertahankan rasio aspek */
+    border-radius: 40px; /* Menjaga sudut gambar tetap melengkung */
+}
+
+.about p {
+    font-size: 28px;
+    line-height: 1.6;
+    color: #f0f0f0;
+}
+
+.pengalaman h3 {
+    text-align: center;
+    font-size: 30px;
+    color: #B0B0B0; /* Metallic Silver */
+    margin-bottom: 20px;
+}
+
+.popup {
+    display: none; /* Masih disembunyikan default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Latar belakang semi-transparan */
+    overflow: hidden; /* Mencegah tampilan elemen di luar pop-up */
+}
+
+.popup-content {
+    position: relative;
+    margin: 5% auto;
+    padding: 20px;
+    background-color: #1c1c1c;
+    width: 80%;
+    max-height: 80%; /* Agar tidak terlalu tinggi */
+    overflow-y: auto; /* Memungkinkan scrolling pada konten pop-up */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.openPopup img{
+	width: 500px;
+	height: auto;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* Kontainer untuk setiap pengalaman */
+.job {
+    display: flex;
+    flex-direction: column; /* Agar setiap pengalaman muncul secara vertikal */
+    gap: 25px;
+}
+
+.col5 {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Membuat dua kolom: satu untuk gambar, satu untuk list deskripsi */
+    grid-template-rows: auto auto; /* Baris untuk judul dan gambar */
+    gap: 10px;
+}
+
+/* Gambar di titik (0,0) */
+.col5 img {
+    grid-row: 2;
+    grid-column: 1;
+    width: 300px;
+    height: auto;
+}
+
+/* Judul di titik (0,1) */
+.col5 p {
+    grid-row: 1;
+    grid-column: 1 / span 2; /* Judul berada di atas gambar dan list deskripsi */
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+/* List deskripsi di titik (1,0) */
+.col5 ul {
+    grid-row: 2;
+    grid-column: 2;
+    color: #666;
+    font-size: 24px;
+    word-spacing: 2px;
+    line-height: 33px;
+    margin-bottom: 0;
+    align-self: center; /* Vertically centers the list next to the image */
+}
+
+/* Responsif Design */
+@media screen and (max-width: 768px) {
+    .col5 {
+        grid-template-columns: 1fr; /* Ubah grid menjadi satu kolom di layar kecil */
+    }
+    
+    .col5 img {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+.skills {
+    display: flex;
+    justify-content: space-between; /* Agar kotak berdampingan */
+    padding: 50px 0;
+}
+
+.hard-skill {
+    width: 500px; /* Mengatur lebar kotak agar berdampingan */
+    padding: 20px;
+    background: linear-gradient(145deg, #d1d1d1, #f0f0f0); /* Warna latar metalik */
+    border-radius: 10px; /* Membuat sudut membulat */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+    margin-left: 2%;
+    margin-right: 2%;
+    align-content: center;
+}
+.soft-skill {
+    width: 500px; /* Mengatur lebar kotak agar berdampingan */
+    padding: 20px;
+    background: linear-gradient(145deg, #d1d1d1, #f0f0f0); /* Warna latar metalik */
+    border-radius: 10px; /* Membuat sudut membulat */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+    margin-right: 15%;
+    margin-left: 2%;}
+
+.education {
+    width: 500px; /* Mengatur lebar kotak agar tiga kotak bisa berdampingan */
+    padding: 20px;
+    background: linear-gradient(145deg, #d1d1d1, #f0f0f0); /* Warna latar metalik */
+    border-radius: 10px; /* Membuat sudut membulat */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+    margin-right: 2%;
+    margin-left:15%;}
+
+.hard-skill h3, .soft-skill h3, .education h3 {
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.hard-skill ul, .soft-skill ul, .education ul {
+    font-size: 22px;
+    color: #444;
+    list-style: none;
+    padding-left: 0;
+}
+
+.hard-skill ul li, .soft-skill ul li, .education ul li {
+    margin-bottom: 10px;
+}
+
+/* About Section */
+.project {
+    padding: 50px 50px;
+    background-color: #2b2b2b;
+}
+
+.project h3 {
+    text-align: center;
+    font-size: 30px;
+    color: #B0B0B0; /* Metallic Silver */
+    margin-bottom: 40px;
+}
+
+.project .box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Memungkinkan kolom untuk melipat saat lebar kontainer menyempit */
+}
+
+.project .col2 {
+    width: 70%;
+    min-width: 300px; /* Menambahkan batas minimum lebar kolom */
+    text-align: center;
+    vertical-align: middle;
+}
+
+.project p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #f0f0f0;
+    text-align: center;
+    margin-left: 5%;
+}
+.box h4 {
+    grid-row: 1;
+    grid-column: 1 / span 2; /* Judul berada di atas gambar dan list deskripsi */
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+.box p {
+    color: #f0f0f0;
+    font-size: 24px;
+    word-spacing: 2px;
+    line-height: 33px;
+    margin-bottom: 0;
+    align-self: center; /* Vertically centers the list next to the image */
+}
+
+.scrollable-image {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.image-container {
+    width: 35%; /* Adjust width to your preference */
+    height: 600px; /* Set height for the visible area */
+    overflow-y: scroll; /* Enable vertical scroll */
+    border: 2px solid #ccc; /* Optional: Add a border */
+}
+
+.image-container img {
+    width: 100%; /* Make the image fit the container */
+    height: auto;
+}
+.project-description {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; /* Jarak antara PDF viewer dan deskripsi */
+    margin-top: 20px;
+}
+
+.pdf-container {
+    flex: 1; /* PDF viewer akan mengambil lebih banyak ruang */
+    max-width: 60%; /* Mengatur lebar maksimum PDF viewer */
+}
+
+.col2.description {
+    flex: 1;
+    max-width: 35%; /* Mengatur lebar deskripsi */
+}
+
+.pdf-container embed {
+    width: 80%%; /* Pastikan PDF viewer menyesuaikan lebarnya */
+    height: 600px;
+}
+.project-description {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px; /* Kurangi nilai gap */
+    margin-top: 10px; /* Kurangi jarak margin */
+}
+
+.pdf-container {
+    flex: 1; /* PDF viewer akan mengambil lebih banyak ruang */
+    max-width: 55%; /* Mengatur lebar maksimum PDF viewer */
+}
+
+.col2.description {
+    flex: 1;
+    max-width: 40%; /* Atur lebar kolom deskripsi agar lebih seimbang */
+    margin-left: 10px; /* Kurangi jarak antara deskripsi dan video */
+}
+
+.video-container {
+    flex: 1;
+    max-width: 35%; /* Bisa diubah jika diperlukan */
+}
+
+.video-container video {
+    width: 100%; /* Membuat video menyesuaikan lebar kontainer */
+    height: auto;
+}
+
+/* Contact Section */
+.service {
+	margin-top: 50px;
+    padding: 50px 0;
+    background-color: #333;
+}
+
+.service h3 {
+    text-align: center;
+    font-size: 30px;
+    color: #B0B0B0; /* Metallic Silver */
+    margin-bottom: 40px;
+}
+
+.service .box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.service .col3 {
+    width: 30%;
+    text-align: center;
+}
+
+.service .icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #800020; /* Burgundy */
+}
+
+.service .col3 p {
+    font-size: 18px;
+    color: #f0f0f0;
+}
+
+/* Medsos Section */
+.medsos {
+    background-color: #2b2b2b;
+    padding: 10px 0;
+    text-align: right;
+}
+
+.medsos ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.medsos ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.medsos ul li a {
+    color: #DAF7A6;
+    font-size: 45px;
+}
+
+/* Tombol Medsos */
+.medsos ul li a:hover {
+    color: #B0B0B0; /* Metallic Silver */
+}
+
+/* Responsif Design */
+@media screen and (max-width: 768px) {
+    .about .box, .service .box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about .col2, .service .col3 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
